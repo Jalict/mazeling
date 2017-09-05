@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
 
         if(horizontal != 0)
         {
-            Debug.Log(vertical + " " + id);
             transform.Rotate(transform.up, horizontal * Time.deltaTime * rotationSpeed);
         }
 
