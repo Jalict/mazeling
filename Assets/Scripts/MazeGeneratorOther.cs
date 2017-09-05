@@ -65,6 +65,7 @@ public class MazeGeneratorOther : MonoBehaviour
                 {
                     MazeString = MazeString + "X";  // added to create String
                     ptype = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    ptype.name = "[" + j + ":" + i + "]";
                     ptype.transform.position = new Vector3(i * ptype.transform.localScale.x, 0, j * ptype.transform.localScale.z);
 
                     if (brick != null) { ptype.GetComponent<Renderer>().material = brick; }
