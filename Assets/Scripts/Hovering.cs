@@ -37,8 +37,6 @@ public class Hovering : MonoBehaviour {
 
         if ((t >= 1 && tick) || (t <= 0 && !tick))
             tick = !tick;
-
-        Debug.Log(t);
     }
 
     Vector3 GetDirectionVector(Space space)

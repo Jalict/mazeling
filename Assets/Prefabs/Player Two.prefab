@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 20611638153017460}
   - component: {fileID: 92265882471975976}
   - component: {fileID: 124888218847817780}
+  - component: {fileID: 81711465727198028}
   m_Layer: 0
   m_Name: Left Camera
   m_TagString: MainCamera
@@ -44,7 +45,7 @@ GameObject:
   - component: {fileID: 136546659160914146}
   m_Layer: 0
   m_Name: Player Two
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,6 +167,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!81 &81711465727198028
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1077681266786500}
+  m_Enabled: 1
 --- !u!92 &92265882471975976
 Behaviour:
   m_ObjectHideFlags: 1
