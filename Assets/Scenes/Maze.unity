@@ -147,12 +147,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114622369988110540, guid: a47c5a82bfeadfb4992ce358dfdee92a,
+    - target: {fileID: 114314664723326880, guid: a47c5a82bfeadfb4992ce358dfdee92a,
         type: 2}
-      propertyPath: rotationSpeed
-      value: 150
+      propertyPath: shootingSpeed
+      value: 0.1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 81570643906231740, guid: a47c5a82bfeadfb4992ce358dfdee92a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a47c5a82bfeadfb4992ce358dfdee92a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &423152477
@@ -239,38 +240,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e9a4f8ad25a45e488699c2f3d8a0785, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &595166445 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1183774765309282, guid: 208aa33fd5f5f4d4aba5358198b163da,
-    type: 2}
-  m_PrefabInternal: {fileID: 1385859467}
---- !u!114 &595166446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 595166445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4efde57b23d36f5499a8c4d546d566d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 0
-  shootingSpeed: 0
-  projectileSpeed: 0
-  maxNumOfProjectiles: 0
-  projectilePrefab: {fileID: 0}
---- !u!114 &595166447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 595166445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95d8c221aae973947ad11a1fb6869d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1121176562
 Prefab:
   m_ObjectHideFlags: 0
@@ -313,38 +282,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b21e2f23e2811154c8f9dbaf9ff598c7, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1127180839 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1273890851134754, guid: a47c5a82bfeadfb4992ce358dfdee92a,
-    type: 2}
-  m_PrefabInternal: {fileID: 220713638}
---- !u!114 &1127180840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1127180839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4efde57b23d36f5499a8c4d546d566d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 0
-  shootingSpeed: 0
-  projectileSpeed: 0
-  maxNumOfProjectiles: 0
-  projectilePrefab: {fileID: 0}
---- !u!114 &1127180841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1127180839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95d8c221aae973947ad11a1fb6869d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1366754475
 Prefab:
   m_ObjectHideFlags: 0
@@ -436,12 +373,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114430408247785142, guid: 208aa33fd5f5f4d4aba5358198b163da,
+    - target: {fileID: 114228126323820840, guid: 208aa33fd5f5f4d4aba5358198b163da,
         type: 2}
-      propertyPath: rotationSpeed
-      value: 150
+      propertyPath: shootingSpeed
+      value: 0.1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 81711465727198028, guid: 208aa33fd5f5f4d4aba5358198b163da, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 208aa33fd5f5f4d4aba5358198b163da, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1981211724

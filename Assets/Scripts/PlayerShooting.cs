@@ -19,6 +19,8 @@ public class PlayerShooting : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        pIndex = 0;
+
         projectiles = new GameObject[maxNumOfProjectiles];
 
         for (int i = 0; i < maxNumOfProjectiles; i++)
@@ -35,12 +37,21 @@ public class PlayerShooting : MonoBehaviour {
 
 		if(Input.GetKey(key) && time - lastShotTime >= shootingSpeed)
         {
-            projectiles[pIndex].transform.position = transform.forward * 0.2f;
+            projectiles[pIndex].transform.position = transform.position + (transform.forward * 0.5f);
+            projectiles[pIndex].transform.rotation = transform.rotation;
 
             projectiles[pIndex].SetActive(true);
 
             lastShotTime = time;
-            pIndex++;   // Go to next projectile in the array for next "shot"
+            pIndex++;
+            if (pIndex >= maxNumOfProjectiles)
+                pIndex = 0;
         }
 	}
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + (transform.forward * 0.5f));
+    }
 }

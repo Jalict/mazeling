@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public float projectileSpeed;
+
     private Rigidbody body;
 
 	void Start ()
@@ -13,7 +15,7 @@ public class Projectile : MonoBehaviour
 	
 	void Update ()
     {
-		
+        body.MovePosition(transform.position + (transform.forward * projectileSpeed * Time.deltaTime));
 	}
 
     void OnCollisionEnter(Collision other)
@@ -22,6 +24,8 @@ public class Projectile : MonoBehaviour
         {
             // Hit them
         }
+
+        Debug.Log(name + " hit " + other.gameObject.name);
 
         gameObject.SetActive(false);
     }
