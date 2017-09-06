@@ -147,6 +147,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114622369988110540, guid: a47c5a82bfeadfb4992ce358dfdee92a,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a47c5a82bfeadfb4992ce358dfdee92a, type: 2}
   m_IsPrefabParent: 0
@@ -250,6 +255,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efde57b23d36f5499a8c4d546d566d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 0
+  shootingSpeed: 0
+  projectileSpeed: 0
+  maxNumOfProjectiles: 0
+  projectilePrefab: {fileID: 0}
 --- !u!114 &595166447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +329,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efde57b23d36f5499a8c4d546d566d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 0
+  shootingSpeed: 0
+  projectileSpeed: 0
+  maxNumOfProjectiles: 0
+  projectilePrefab: {fileID: 0}
 --- !u!114 &1127180841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +435,11 @@ Prefab:
     - target: {fileID: 4518450829737050, guid: 208aa33fd5f5f4d4aba5358198b163da, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114430408247785142, guid: 208aa33fd5f5f4d4aba5358198b163da,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 208aa33fd5f5f4d4aba5358198b163da, type: 2}
