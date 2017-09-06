@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    private Rigidbody body;
+
 	void Start ()
     {
-		
+        body = GetComponent<Rigidbody>();
 	}
 	
 	void Update ()
@@ -16,7 +18,7 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player"))
         {
             // Hit them
         }
