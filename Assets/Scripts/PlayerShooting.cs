@@ -39,6 +39,7 @@ public class PlayerShooting : MonoBehaviour {
         {
             projectiles[pIndex].transform.position = transform.position + (transform.forward * 0.5f);
             projectiles[pIndex].transform.rotation = transform.rotation;
+            projectiles[pIndex].GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed;
 
             projectiles[pIndex].SetActive(true);
 
