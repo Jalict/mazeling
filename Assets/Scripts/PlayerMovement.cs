@@ -12,25 +12,25 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody body;
 
 	void Start ()
-    {
-        body = GetComponent<Rigidbody>();
+        {
+            body = GetComponent<Rigidbody>();
 
-        GetComponent<MeshRenderer>().material.color = playerColor;
+            GetComponent<MeshRenderer>().material.color = playerColor;
 	}
 	
 	void Update ()
-    {
-        float vertical = Input.GetAxis("Vertical_" + id);
-        float horizontal = Input.GetAxis("Horizontal_" + id);
-
-        if(horizontal != 0)
         {
-            transform.Rotate(transform.up, horizontal * Time.deltaTime * rotationSpeed);
-        }
+            float vertical = Input.GetAxis("Vertical_" + id);
+            float horizontal = Input.GetAxis("Horizontal_" + id);
 
-        if(vertical != 0)
-        {
-            body.velocity = transform.forward * Time.deltaTime * vertical * movementSpeed;
-        }
+            if (horizontal != 0)
+            {
+                transform.Rotate(transform.up, horizontal * Time.deltaTime * rotationSpeed);
+            }
+
+            if (vertical != 0)
+            {
+                body.AddForce(transform.forward * Time.deltaTime * vertical * movementSpeed);
+            }
 	}
 }
