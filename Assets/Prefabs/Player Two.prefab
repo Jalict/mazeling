@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 20611638153017460}
   - component: {fileID: 92265882471975976}
   - component: {fileID: 124888218847817780}
-  - component: {fileID: 81711465727198028}
   m_Layer: 0
   m_Name: Left Camera
   m_TagString: MainCamera
@@ -59,14 +58,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183774765309282}
-  m_LocalRotation: {x: -0, y: -0.8660256, z: -0, w: 0.49999967}
-  m_LocalPosition: {x: 28.804, y: 1.62, z: 28.938}
+  m_LocalRotation: {x: -0, y: -0.999397, z: -0, w: 0.034725003}
+  m_LocalPosition: {x: 1.0755706, y: 3.8, z: 1.9897735}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4656212231133018}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -120.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -176.02, z: 0}
 --- !u!4 &4656212231133018
 Transform:
   m_ObjectHideFlags: 1
@@ -170,13 +169,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!81 &81711465727198028
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1077681266786500}
-  m_Enabled: 1
 --- !u!92 &92265882471975976
 Behaviour:
   m_ObjectHideFlags: 1
@@ -196,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 306
-  shootingSpeed: 1
+  shootingSpeed: 0.6
   projectileSpeed: 10
   maxNumOfProjectiles: 20
   projectilePrefab: {fileID: 1995222678166182, guid: cb20fc9da4fc1e64181cbddbe9712145,
@@ -215,6 +207,7 @@ MonoBehaviour:
   id: 2
   movementSpeed: 150
   rotationSpeed: 150
+  playerColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!114 &114562385167977614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,8 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d8c221aae973947ad11a1fb6869d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  hitDamage: 0
+  health: 1
+  hitDamage: 0.25
 --- !u!124 &124888218847817780
 Behaviour:
   m_ObjectHideFlags: 1

@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 20872152769584066}
   - component: {fileID: 92405101298033834}
   - component: {fileID: 124803602504462780}
-  - component: {fileID: 81570643906231740}
   m_Layer: 0
   m_Name: Right Camera
   m_TagString: MainCamera
@@ -73,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273890851134754}
   m_LocalRotation: {x: 0, y: -0.0000005513429, z: 0, w: 1}
-  m_LocalPosition: {x: 1.21, y: 1.62, z: 0.77}
+  m_LocalPosition: {x: 1, y: 3.8, z: -0.1}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4183685532209828}
@@ -170,13 +169,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!81 &81570643906231740
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1116912974633594}
-  m_Enabled: 1
 --- !u!92 &92405101298033834
 Behaviour:
   m_ObjectHideFlags: 1
@@ -196,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 305
-  shootingSpeed: 1
+  shootingSpeed: 0.6
   projectileSpeed: 10
   maxNumOfProjectiles: 20
   projectilePrefab: {fileID: 1995222678166182, guid: cb20fc9da4fc1e64181cbddbe9712145,
@@ -212,8 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d8c221aae973947ad11a1fb6869d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  hitDamage: 0
+  health: 1
+  hitDamage: 0.25
 --- !u!114 &114622369988110540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,6 +220,7 @@ MonoBehaviour:
   id: 1
   movementSpeed: 150
   rotationSpeed: 150
+  playerColor: {r: 0, g: 0, b: 1, a: 0}
 --- !u!114 &114976131002503214
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4625476207972418}
   - component: {fileID: 198381030025152994}
   - component: {fileID: 199695964374478028}
-  - component: {fileID: 114279597428208186}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -42,17 +41,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114279597428208186
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1867872612651388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bea10fc5f784f65479169215747fa325, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!198 &198381030025152994
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -62,7 +50,7 @@ ParticleSystem:
   serializedVersion: 5
   lengthInSec: 1
   simulationSpeed: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -119,7 +107,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.4
+      scalar: 0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -160,7 +148,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -264,7 +252,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.35
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -577,7 +565,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.1
       mode: 0
       spread: 0
       speed:
@@ -2383,7 +2371,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -2398,7 +2386,7 @@ ParticleSystem:
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2525,7 +2513,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 0
+    quality: 2
     voxelSize: 0.5
     collisionMessages: 0
     collidesWithDynamic: 1

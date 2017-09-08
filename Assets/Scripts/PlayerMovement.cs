@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public int id;
     public float movementSpeed;
     public float rotationSpeed;
+    public Color playerColor;
 
     private Rigidbody body;
 

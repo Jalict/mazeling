@@ -22,7 +22,6 @@ public class PlayerShooting : MonoBehaviour {
         pIndex = 0;
 
         projectiles = new GameObject[maxNumOfProjectiles];
-
         for (int i = 0; i < maxNumOfProjectiles; i++)
         {
             projectiles[i] = Instantiate(projectilePrefab);
