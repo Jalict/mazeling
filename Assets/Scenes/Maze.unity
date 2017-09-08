@@ -205,11 +205,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4328319189409382, guid: 2e9a4f8ad25a45e488699c2f3d8a0785, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.16
+      value: 7.19
       objectReference: {fileID: 0}
     - target: {fileID: 4328319189409382, guid: 2e9a4f8ad25a45e488699c2f3d8a0785, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 15.5
+      value: 15.53
       objectReference: {fileID: 0}
     - target: {fileID: 4328319189409382, guid: 2e9a4f8ad25a45e488699c2f3d8a0785, type: 2}
       propertyPath: m_LocalRotation.x
@@ -234,7 +234,7 @@ Prefab:
     - target: {fileID: 20896669462867402, guid: 2e9a4f8ad25a45e488699c2f3d8a0785,
         type: 2}
       propertyPath: orthographic size
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 20896669462867402, guid: 2e9a4f8ad25a45e488699c2f3d8a0785,
         type: 2}
@@ -562,20 +562,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
