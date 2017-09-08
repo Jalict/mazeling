@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
 	void Start ()
     {
         body = GetComponent<Rigidbody>();
+
+        GetComponent<MeshRenderer>().material.color = playerColor;
 	}
 	
 	void Update ()

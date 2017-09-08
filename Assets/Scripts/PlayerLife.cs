@@ -24,6 +24,10 @@ public class PlayerLife : MonoBehaviour {
 
     void Respawn()
     {
+        health = 1;
 
+        transform.position = Vector3.zero;
+
+        throw new NotImplementedException("Player respawning");
     }
 }

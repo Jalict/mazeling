@@ -21,6 +21,7 @@ public class Projectile : MonoBehaviour
             {
                 case "Player":
                     col.GetComponent<PlayerLife>().Hit();
+                    //TODO Add force to player on explosion?
                     break;
                 case "Wall":
                     col.GetComponent<Wall>().Hit();
@@ -32,5 +33,10 @@ public class Projectile : MonoBehaviour
 
         // Make projectile go away
         gameObject.SetActive(false);
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, explosionSize);
     }
 }
