@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 20896669462867402}
   - component: {fileID: 124952562907446000}
   - component: {fileID: 92685632795976610}
+  - component: {fileID: 81350074420578316}
   m_Layer: 0
   m_Name: Spectator Camera
   m_TagString: MainCamera
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1637846695373728}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 15, y: 7.16, z: 15}
+  m_LocalPosition: {x: 0.4, y: 7.2, z: 1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,7 +63,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 16.94
+  orthographic size: 6.51
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -78,6 +79,13 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!81 &81350074420578316
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637846695373728}
+  m_Enabled: 1
 --- !u!92 &92685632795976610
 Behaviour:
   m_ObjectHideFlags: 1

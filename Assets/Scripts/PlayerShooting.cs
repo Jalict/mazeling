@@ -11,6 +11,7 @@ public class PlayerShooting : MonoBehaviour {
 
     [Header("Assets")]
     public GameObject projectilePrefab; // Prefab to Instantiate for the projectile
+    public AudioClip shotClip;
 
     private GameObject[] projectiles;   // Projectiles that have been shot (Is object pooled)
     private int pIndex;                 // Projectile index (Used for object pooling)
@@ -34,8 +35,10 @@ public class PlayerShooting : MonoBehaviour {
     {
         float time = Time.time;
 
-		if(Input.GetKey(key) && time - lastShotTime >= shootingSpeed)
+		if(Input.GetKeyDown(key) && time - lastShotTime >= shootingSpeed)
         {
+            AudioSource.PlayClipAtPoint(shotClip, Camera.allCameras[2].transform.position);
+
             projectiles[pIndex].transform.position = transform.position + (transform.forward * 0.5f);
             projectiles[pIndex].transform.rotation = transform.rotation;
             projectiles[pIndex].GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed;
