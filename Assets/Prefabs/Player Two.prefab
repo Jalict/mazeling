@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 136546659160914146}
   - component: {fileID: 114660942973246404}
   - component: {fileID: 114228126323820840}
-  - component: {fileID: 114614938885499650}
   - component: {fileID: 114562385167977614}
   m_Layer: 0
   m_Name: Player Two
@@ -227,22 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d8c221aae973947ad11a1fb6869d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114614938885499650
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1183774765309282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4efde57b23d36f5499a8c4d546d566d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 0
-  shootingSpeed: 0
-  projectileSpeed: 0
-  maxNumOfProjectiles: 0
-  projectilePrefab: {fileID: 0}
+  health: 0
+  hitDamage: 0
 --- !u!114 &114660942973246404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,6 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d8c221aae973947ad11a1fb6869d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  hitDamage: 0
 --- !u!124 &124888218847817780
 Behaviour:
   m_ObjectHideFlags: 1

@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 136546814409085004}
   - component: {fileID: 114537392448344782}
   - component: {fileID: 114314664723326880}
-  - component: {fileID: 114109981267732974}
   - component: {fileID: 114976131002503214}
   m_Layer: 0
   m_Name: Player One
@@ -185,22 +184,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1116912974633594}
   m_Enabled: 1
---- !u!114 &114109981267732974
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1273890851134754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4efde57b23d36f5499a8c4d546d566d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 0
-  shootingSpeed: 0
-  projectileSpeed: 0
-  maxNumOfProjectiles: 0
-  projectilePrefab: {fileID: 0}
 --- !u!114 &114314664723326880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,6 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d8c221aae973947ad11a1fb6869d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  hitDamage: 0
 --- !u!114 &114622369988110540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,6 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d8c221aae973947ad11a1fb6869d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  hitDamage: 0
 --- !u!124 &124803602504462780
 Behaviour:
   m_ObjectHideFlags: 1
