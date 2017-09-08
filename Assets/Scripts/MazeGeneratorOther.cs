@@ -61,12 +61,42 @@ public class MazeGeneratorOther : MonoBehaviour
 	int MazeTileHeight = Maze.GetUpperBound(0);
 	int MazeTileWidth = Maze.GetUpperBound(1);
 
+        for (int i = 1; i < MazeTileHeight; i++)
+        {
+            for (int j = 1; j < MazeTileWidth; j++)
+            {
+                if (ShouldRemoveWall(i, j, MazeTileWidth, MazeTileHeight))
+                {
+		    Maze[i, j] = 0;
+		}
+	    }
+        }
+
+        for (int i = 2; i <= MazeTileHeight - 2; i += 2)
+        {
+            for (int j = 2; j <= MazeTileWidth - 2; j += 2)
+            {
+		bool NeighborsEmpty =
+			Maze[i - 1, j] == 0 && // top
+			Maze[i, j - 1] == 0 && // left
+			Maze[i + 1, j] == 0 && // bottom
+			Maze[i, j + 1] == 0;   // right
+
+                if (NeighborsEmpty)
+                {
+		    Maze[i, j] = 0;
+		}
+	    }
+        }
+
+        print(MazeString);  // added to create String
+
         for (int i = 0; i <= MazeTileHeight; i++)
         {
             for (int j = 0; j <= MazeTileWidth; j++)
             {
-                if (Maze[i, j] == 1 && !ShouldRemoveWall(i, j, MazeTileWidth, MazeTileHeight))
-                {
+                if (Maze[i, j] == 1)
+		{
                     MazeString = MazeString + "X";  // added to create String
                     ptype = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     ptype.name = "[" + j + ":" + i + "]";
@@ -74,17 +104,18 @@ public class MazeGeneratorOther : MonoBehaviour
 
                     if (brick != null) { ptype.GetComponent<Renderer>().material = brick; }
                     ptype.transform.parent = transform;
-                }
-                else
+
+		}
+		else
                 {
                     MazeString = MazeString + "0"; // added to create String
                     pathMazes.Add(new Vector3(i, 0, j));
                 }
-            }
+	    }
             MazeString = MazeString + "\n";  // added to create String
-        }
-        print(MazeString);  // added to create String
+	}
     }
+
 
     // =======================================
     public int[,] CreateMaze()
@@ -179,7 +210,6 @@ public class MazeGeneratorOther : MonoBehaviour
 
     private bool ShouldRemoveWall(int i, int j, int width, int height)
     {
-        return i > 0 && j > 0 && i < width && j < height &&
-                i % 2 != j % 2 && rnd.Next(100) < 10;
+        return i % 2 != j % 2 && rnd.Next(100) < 20;
     }
 }
