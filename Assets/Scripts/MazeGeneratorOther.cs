@@ -57,11 +57,15 @@ public class MazeGeneratorOther : MonoBehaviour
         _tiletoTry.Push(CurrentTile);
         Maze = CreateMaze();  // generate the maze in Maze Array.
         GameObject ptype = null;
-        for (int i = 0; i <= Maze.GetUpperBound(0); i++)
+
+	int MazeTileHeight = Maze.GetUpperBound(0);
+	int MazeTileWidth = Maze.GetUpperBound(1);
+
+        for (int i = 0; i <= MazeTileHeight; i++)
         {
-            for (int j = 0; j <= Maze.GetUpperBound(1); j++)
+            for (int j = 0; j <= MazeTileWidth; j++)
             {
-                if (Maze[i, j] == 1)
+                if (Maze[i, j] == 1 && !ShouldRemoveWall(i, j, MazeTileWidth, MazeTileHeight))
                 {
                     MazeString = MazeString + "X";  // added to create String
                     ptype = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -71,7 +75,7 @@ public class MazeGeneratorOther : MonoBehaviour
                     if (brick != null) { ptype.GetComponent<Renderer>().material = brick; }
                     ptype.transform.parent = transform;
                 }
-                else if (Maze[i, j] == 0)
+                else
                 {
                     MazeString = MazeString + "0"; // added to create String
                     pathMazes.Add(new Vector3(i, 0, j));
@@ -171,5 +175,11 @@ public class MazeGeneratorOther : MonoBehaviour
     {
         //return p.x >= 0  p.y >= 0  p.x < width  p.y < height;
         return p.x >= 0 && p.y >= 0 && p.x < width && p.y < height;
+    }
+
+    private bool ShouldRemoveWall(int i, int j, int width, int height)
+    {
+        return i > 0 && j > 0 && i < width && j < height &&
+                i % 2 != j % 2 && rnd.Next(100) < 10;
     }
 }
