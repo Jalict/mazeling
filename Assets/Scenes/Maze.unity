@@ -147,6 +147,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114622369988110540, guid: a47c5a82bfeadfb4992ce358dfdee92a,
+        type: 2}
+      propertyPath: movementSpeed
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 54859979636070298, guid: a47c5a82bfeadfb4992ce358dfdee92a,
+        type: 2}
+      propertyPath: m_Drag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 54859979636070298, guid: a47c5a82bfeadfb4992ce358dfdee92a,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114622369988110540, guid: a47c5a82bfeadfb4992ce358dfdee92a,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a47c5a82bfeadfb4992ce358dfdee92a, type: 2}
   m_IsPrefabParent: 0
@@ -510,6 +530,31 @@ Prefab:
     - target: {fileID: 4518450829737050, guid: 208aa33fd5f5f4d4aba5358198b163da, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114430408247785142, guid: 208aa33fd5f5f4d4aba5358198b163da,
+        type: 2}
+      propertyPath: movementSpeed
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 54335513982128230, guid: 208aa33fd5f5f4d4aba5358198b163da,
+        type: 2}
+      propertyPath: m_Drag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 54335513982128230, guid: 208aa33fd5f5f4d4aba5358198b163da,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54335513982128230, guid: 208aa33fd5f5f4d4aba5358198b163da,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114430408247785142, guid: 208aa33fd5f5f4d4aba5358198b163da,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 208aa33fd5f5f4d4aba5358198b163da, type: 2}
