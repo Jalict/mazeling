@@ -42,7 +42,7 @@ public class MazeGeneratorOther : MonoBehaviour
 
     // ============= subroutines ============
 
-    void MakeBlocks()
+    public void MakeBlocks()
     {
 
         Maze = new int[width, height];

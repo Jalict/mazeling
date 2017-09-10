@@ -31,7 +31,7 @@ public class GameSession : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        RestartRound();
+        
 	}
 	
 	// Update is called once per frame
@@ -56,10 +56,7 @@ public class GameSession : MonoBehaviour {
 
     void RestartRound()
     {
-        timeStarted = Time.time;
-
-        playerOneLife.Respawn(new Vector3(1,2,1));
-        playerTwoLife.Respawn(new Vector3(29, 2, 29));
+        Application.LoadLevel(0);
     }
 
     public void AddKill(int i)
