@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,14 +11,21 @@ public class Projectile : MonoBehaviour
 
     void OnEnable()
     {
+        StartCoroutine(StopMe());
+    }
 
+    private IEnumerator StopMe()
+    {
+        yield return new WaitForSeconds(3f);
+
+        gameObject.SetActive(false);
     }
 
     void OnCollisionEnter(Collision other)
     {
         // Create explosion particles
         GameObject explosion = Instantiate(explosionPrefab, other.contacts[0].point, Quaternion.identity);
-        AudioSource.PlayClipAtPoint(explosionClip[Random.Range(0, explosionClip.Length)], Camera.allCameras[2].transform.position);
+        AudioSource.PlayClipAtPoint(explosionClip[UnityEngine.Random.Range(0, explosionClip.Length)], Camera.allCameras[2].transform.position);
         Destroy(explosion, 0.4f);
 
         // Hit objects nearby
