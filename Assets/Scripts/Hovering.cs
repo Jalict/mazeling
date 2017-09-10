@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hovering : MonoBehaviour {
-    public float movingSpeed;
-    public float movingAmount;
     public Direction movingDirection;
     public Space movingSpace;
+    private bool enabled;
 
     private Transform objectMoved;
     
@@ -14,15 +13,17 @@ public class Hovering : MonoBehaviour {
     void Start ()
     {
         objectMoved = transform.GetChild(0).transform;
-
+	enabled = true;
     }
 	
     // Update is called once per frame
     void Update ()
     {
-	Vector3 position = objectMoved.position;
-	position.y = Mathf.Sin(Time.time) * 0.2f;
-	objectMoved.position = position;
+        Vector3 position = objectMoved.position;
+        position.y = enabled
+                ? Mathf.Sin(Time.time) * 0.2f
+                : -100; // hack, should really disable renderer...
+        objectMoved.position = position;
     }
 
     Vector3 GetDirectionVector(Space space)
@@ -52,6 +53,19 @@ public class Hovering : MonoBehaviour {
         }
 
         return vec;
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (enabled && (other.gameObject.name == "Player Blue" || other.gameObject.name == "Player Red")) {
+	    enabled = false;
+	    StartCoroutine(respawnPowerup());
+        }
+    }
+
+    IEnumerator respawnPowerup()
+    {
+	    yield return new WaitForSeconds(8f);
+	    enabled = true;
     }
 }
 
