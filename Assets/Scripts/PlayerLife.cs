@@ -26,8 +26,7 @@ public class PlayerLife : MonoBehaviour {
     {
         health = 1;
 
-        transform.position = Vector3.zero;
-
-        throw new NotImplementedException("Player respawning");
+        transform.position = MazeGeneratorOther.Instance.GetRandomCorner();
+        transform.LookAt(new Vector3(29 / 2, 0, 29 / 2));
     }
 }

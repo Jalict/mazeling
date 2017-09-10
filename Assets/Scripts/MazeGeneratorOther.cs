@@ -58,8 +58,8 @@ public class MazeGeneratorOther : MonoBehaviour
         Maze = CreateMaze();  // generate the maze in Maze Array.
         GameObject ptype = null;
 
-	int MazeTileHeight = Maze.GetUpperBound(0);
-	int MazeTileWidth = Maze.GetUpperBound(1);
+	    int MazeTileHeight = Maze.GetUpperBound(0);
+	    int MazeTileWidth = Maze.GetUpperBound(1);
 
         for (int i = 1; i < MazeTileHeight; i++)
         {
@@ -67,9 +67,9 @@ public class MazeGeneratorOther : MonoBehaviour
             {
                 if (ShouldRemoveWall(i, j, MazeTileWidth, MazeTileHeight))
                 {
-		    Maze[i, j] = 0;
-		}
-	    }
+		            Maze[i, j] = 0;
+		        }
+	        }
         }
 
         for (int i = 2; i <= MazeTileHeight - 2; i += 2)
@@ -211,5 +211,25 @@ public class MazeGeneratorOther : MonoBehaviour
     private bool ShouldRemoveWall(int i, int j, int width, int height)
     {
         return i % 2 != j % 2 && rnd.Next(100) < 20;
+    }
+
+    public Vector3 GetRandomCorner()
+    {
+        int num = UnityEngine.Random.Range(0, 3);
+
+        // Too lazy to calc don't judge
+        switch (num)
+        {
+            case 0:
+                return new Vector3(1, 2, 1);            
+            case 1:
+                return new Vector3(1, 2, 29);
+            case 2:
+                return new Vector3(29, 2, 29);
+            case 3:
+                return new Vector3(29, 2, 1);
+        }
+
+        throw new IndexOutOfRangeException("Bad random number");
     }
 }
