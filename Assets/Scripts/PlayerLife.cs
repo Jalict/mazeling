@@ -11,6 +11,7 @@ public class PlayerLife : MonoBehaviour {
 
     [Header("References")]
     public Image playerHealthImg;
+    public Image playerHealthImgSpec;
 
     void Start()
     {
@@ -22,8 +23,9 @@ public class PlayerLife : MonoBehaviour {
         health -= hitDamage;
 
         playerHealthImg.rectTransform.localScale = new Vector3(health, 1, 1);
+        playerHealthImgSpec.rectTransform.localScale = new Vector3(health, 1, 1);
 
-        if(health <= 0)
+        if (health <= 0)
         {
             Respawn(Vector3.zero);
         }
@@ -41,5 +43,6 @@ public class PlayerLife : MonoBehaviour {
         transform.LookAt(new Vector3(29 / 2, 2, 29 / 2));
 
         playerHealthImg.rectTransform.localScale = new Vector3(1, 1, 1);
+        playerHealthImgSpec.rectTransform.localScale = new Vector3(1, 1, 1);
     }
 }
