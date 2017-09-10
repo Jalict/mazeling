@@ -8,35 +8,21 @@ public class Hovering : MonoBehaviour {
     public Direction movingDirection;
     public Space movingSpace;
 
-    [Range(0,1)]
-    private float t;
     private Transform objectMoved;
-    private bool tick;
-
-	// Use this for initialization
-	void Start ()
+    
+    // Use this for initialization
+    void Start ()
     {
         objectMoved = transform.GetChild(0).transform;
 
-        t = 0;
-        tick = false;
-	}
+    }
 	
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update ()
     {
-	    Vector3 directionVector = GetDirectionVector(movingSpace) * movingAmount;
-
-        objectMoved.position = Vector3.Lerp(transform.position - directionVector, transform.position + directionVector, t);
-
-        if(tick) {
-            t += Time.deltaTime * movingSpeed;
-        } else {
-            t -= Time.deltaTime * movingSpeed;
-        }
-
-        if ((t >= 1 && tick) || (t <= 0 && !tick))
-            tick = !tick;
+	Vector3 position = objectMoved.position;
+	position.y = Mathf.Sin(Time.time) * 0.2f;
+	objectMoved.position = position;
     }
 
     Vector3 GetDirectionVector(Space space)
