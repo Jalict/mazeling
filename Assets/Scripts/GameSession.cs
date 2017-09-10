@@ -31,8 +31,8 @@ public class GameSession : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        
-	}
+        timeStarted = Time.time;
+    }
 	
 	// Update is called once per frame
 	void Update ()
