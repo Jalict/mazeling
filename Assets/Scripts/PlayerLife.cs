@@ -11,6 +11,7 @@ public class PlayerLife : MonoBehaviour {
 
     [Header("References")]
     public GameObject bloodsplat;
+    public Screenshake shake;
     public Image playerHealthImg;
     public Image playerHealthImgSpec;
 
@@ -22,6 +23,8 @@ public class PlayerLife : MonoBehaviour {
     public void Hit()
     {
         health -= hitDamage;
+
+        shake.Shake(0.25f, 0.25f);
 
         playerHealthImg.rectTransform.localScale = new Vector3(health, 1, 1);
         playerHealthImgSpec.rectTransform.localScale = new Vector3(health, 1, 1);

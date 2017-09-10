@@ -162,6 +162,11 @@ Prefab:
       propertyPath: playerHealthImgSpec
       value: 
       objectReference: {fileID: 1024996070}
+    - target: {fileID: 114537392448344782, guid: a47c5a82bfeadfb4992ce358dfdee92a,
+        type: 2}
+      propertyPath: shake
+      value: 
+      objectReference: {fileID: 902950341}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a47c5a82bfeadfb4992ce358dfdee92a, type: 2}
   m_IsPrefabParent: 0
@@ -238,6 +243,22 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 298355326}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &213150997 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1739488091376342, guid: 208aa33fd5f5f4d4aba5358198b163da,
+    type: 2}
+  m_PrefabInternal: {fileID: 1538730049}
+--- !u!114 &213150998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 213150997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d5ac6d8ddd1e649b7fc98f1a77c909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &298355326
 Prefab:
   m_ObjectHideFlags: 0
@@ -387,6 +408,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83500479cc5bf4a4dbca001779fb0d3a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &902950340 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1187815649498580, guid: a47c5a82bfeadfb4992ce358dfdee92a,
+    type: 2}
+  m_PrefabInternal: {fileID: 147771216}
+--- !u!114 &902950341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902950340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d5ac6d8ddd1e649b7fc98f1a77c909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &973133785
 Prefab:
   m_ObjectHideFlags: 0
@@ -674,6 +711,11 @@ Prefab:
       propertyPath: playerHealthImgSpec
       value: 
       objectReference: {fileID: 1396937582}
+    - target: {fileID: 114660942973246404, guid: 208aa33fd5f5f4d4aba5358198b163da,
+        type: 2}
+      propertyPath: shake
+      value: 
+      objectReference: {fileID: 213150998}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 208aa33fd5f5f4d4aba5358198b163da, type: 2}
   m_IsPrefabParent: 0
