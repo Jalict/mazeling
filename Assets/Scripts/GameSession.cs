@@ -17,8 +17,8 @@ public class GameSession : MonoBehaviour {
     private float timeStarted;
     private int timeLeft;
 
-    private int playerOneScore;
-    private int playerTwoScore;
+    private int playerOneScore = 0;
+    private int playerTwoScore = 0;
 
     // Singleton
     private static GameSession instance;
@@ -43,6 +43,9 @@ public class GameSession : MonoBehaviour {
 
         if(timeLeft <= 0)
             RestartRound();
+
+        playerOneScoreText.text = "Score\n" + playerOneScore;
+        playerTwoScoreText.text = "Score\n" + playerTwoScore;
 
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
