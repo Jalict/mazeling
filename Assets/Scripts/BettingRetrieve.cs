@@ -11,6 +11,7 @@ public class BettingRetrieve : MonoBehaviour {
 
     public Text playerOneText;
     public Text playerTwoText;
+    public Text url;
 
     private List<int> playerOneScoreHistory;
     private List<int> playerTwoScoreHistory;
@@ -21,6 +22,7 @@ public class BettingRetrieve : MonoBehaviour {
 
         playerOneText.gameObject.SetActive(false);
         playerTwoText.gameObject.SetActive(false);
+        url.gameObject.SetActive(false);
 
         playerOneScoreHistory = new List<int>();
         playerTwoScoreHistory = new List<int>();
@@ -33,6 +35,8 @@ public class BettingRetrieve : MonoBehaviour {
         {
             playerOneText.gameObject.SetActive(!playerOneText.gameObject.activeSelf);
             playerTwoText.gameObject.SetActive(!playerTwoText.gameObject.activeSelf);
+
+            url.gameObject.SetActive(!url.gameObject.activeSelf);
         }
 	}
 

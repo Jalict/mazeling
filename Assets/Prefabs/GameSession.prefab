@@ -53,5 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalRoundTime: 120
   timeText: {fileID: 0}
+  playerOneScoreText: {fileID: 0}
+  playerTwoScoreText: {fileID: 0}
   playerOneLife: {fileID: 0}
   playerTwoLife: {fileID: 0}

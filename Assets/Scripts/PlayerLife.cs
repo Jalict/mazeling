@@ -28,6 +28,14 @@ public class PlayerLife : MonoBehaviour {
         if (health <= 0)
         {
             Respawn(Vector3.zero);
+
+            if (GetComponent<PlayerMovement>().id == 0)
+                GameSession.Instance.AddKill(1);
+            else
+                GameSession.Instance.AddKill(0);
+
+
+
         }
     }
 

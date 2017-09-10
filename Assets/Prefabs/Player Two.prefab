@@ -317,6 +317,7 @@ MonoBehaviour:
   health: 1
   hitDamage: 0.25
   playerHealthImg: {fileID: 0}
+  playerHealthImgSpec: {fileID: 0}
 --- !u!124 &124888218847817780
 Behaviour:
   m_ObjectHideFlags: 1
