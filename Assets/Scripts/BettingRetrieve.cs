@@ -16,6 +16,9 @@ public class BettingRetrieve : MonoBehaviour {
     private List<int> playerOneScoreHistory;
     private List<int> playerTwoScoreHistory;
 
+    public int playerOneBets;
+    public int playerTwoBets;
+
 	// Use this for initialization
 	void Start () {
         StartCoroutine(Retrieve());
@@ -53,6 +56,9 @@ public class BettingRetrieve : MonoBehaviour {
             {
                 playerOneText.text = "Bets: " + BettingData.CreateFromJSON(www.downloadHandler.text).Player2;
                 playerTwoText.text = "Bets: " + BettingData.CreateFromJSON(www.downloadHandler.text).Player1;
+
+                playerOneBets = BettingData.CreateFromJSON(www.downloadHandler.text).Player2;
+                playerTwoBets = BettingData.CreateFromJSON(www.downloadHandler.text).Player1;
 
                 playerOneScoreHistory.Add(BettingData.CreateFromJSON(www.downloadHandler.text).Player2);
                 playerTwoScoreHistory.Add(BettingData.CreateFromJSON(www.downloadHandler.text).Player1);

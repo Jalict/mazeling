@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,13 @@ public class GameSession : MonoBehaviour {
     public PlayerLife playerTwoLife;
     public PlayerMovement playerTwoMovement;
     public AudioClip beep;
+    public GameObject standardUI1, standardUI2;
+    public GameObject endUI1, endUI2;
+
+    public BettingRetrieve bets;
+
+    public Text finalBlueD1, finalBlueD2;
+    public Text finalRedD1, finalRedD2;
 
     private float timeStarted;
     private int timeLeft;
@@ -46,7 +54,7 @@ public class GameSession : MonoBehaviour {
         timeText.text = "Time Left\n"+timeLeft;
 
         if(timeLeft <= 0)
-            StartCoroutine(RestartRound());
+            StartCoroutine(EndRound());
 
         playerOneScoreText.text = "Score\n" + playerOneScore;
         playerTwoScoreText.text = "Score\n" + playerTwoScore;
@@ -57,6 +65,26 @@ public class GameSession : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Delete))
             StartCoroutine(RestartRound());
 	}
+
+    IEnumerator EndRound()
+    {
+        playerOneMovement.enabled = false;
+        playerTwoMovement.enabled = false;
+
+        standardUI1.SetActive(false);
+        standardUI2.SetActive(false);
+        endUI1.SetActive(true);
+        endUI2.SetActive(true);
+
+        finalBlueD1.text = "BLUE PLAYER\nScore: " + playerTwoScore + "\nBets: " + bets.playerTwoBets;
+        finalBlueD2.text = "BLUE PLAYER\nScore: " + playerTwoScore + "\nBets: " + bets.playerTwoBets;
+        finalRedD1.text = "RED PLAYER\nScore: " + playerOneScore + "\nBets: " + bets.playerOneBets;
+        finalRedD2.text = "RED PLAYER\nScore: " + playerOneScore + "\nBets: " + bets.playerOneBets;
+
+        yield return new WaitForSeconds(10);
+
+        StartCoroutine(RestartRound());
+    }
 
     IEnumerator RestartRound()
     {
