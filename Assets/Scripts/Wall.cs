@@ -23,12 +23,19 @@ public class Wall : MonoBehaviour
 
     public void Hit()
     {
+        health -= 0.25f;
+
         if (health <= 0)
             gameObject.SetActive(false);    //No need to destroy, just disable it
 
         //TODO change first -> last material depending on health
-        rend.material = wallMaterials[0];
-
-        throw new System.NotImplementedException();
+        if (health <= 0.25f)
+            rend.material = wallMaterials[3];
+        else if (health <= 0.5f)
+            rend.material = wallMaterials[2];
+        else if (health <= 0.75f)
+            rend.material = wallMaterials[1];
+        else if (health < 1f)
+            rend.material = wallMaterials[0];
     }
 }

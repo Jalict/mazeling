@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class MazeGenerator: MonoBehaviour
 {
     public int width, height;
-    public Material brick;
+    public Material[] brick;
     private int[,] Maze;
     private List<Vector3> pathMazes = new List<Vector3>();
     private Stack<Vector2> _tiletoTry = new Stack<Vector2>();
@@ -117,17 +117,24 @@ public class MazeGenerator: MonoBehaviour
             for (int x = 0; x <= MazeTileWidth; x++)
             {
                 if (Maze[y, x] == 1)
-		{
+		            {
                     MazeString = MazeString + "X";  // added to create String
                     ptype = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     ptype.name = "[" + y + ":" + x + "]";
                     ptype.transform.position = new Vector3(x * ptype.transform.localScale.x, 0, y * ptype.transform.localScale.z);
+                    if (x > 0 && x < MazeTileWidth && y > 0 && y < MazeTileHeight)
+                    {
+                        Wall w = ptype.AddComponent<Wall>();
+                        w.wallMaterials = brick;
+                        ptype.tag = "Wall";
+                    }
+                        
 
-                    if (brick != null) { ptype.GetComponent<Renderer>().material = brick; }
+                    if (brick != null) { ptype.GetComponent<Renderer>().material = brick[0]; }
                     ptype.transform.parent = transform;
 
-		}
-		else
+		        }
+		        else
                 {
                     MazeString = MazeString + "0"; // added to create String
                     pathMazes.Add(new Vector3(x, 0, y));
