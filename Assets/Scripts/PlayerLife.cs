@@ -10,6 +10,7 @@ public class PlayerLife : MonoBehaviour {
     public float hitDamage;     // (0-1) Amount of damage on hit
 
     [Header("References")]
+    public GameObject bloodsplat;
     public Image playerHealthImg;
     public Image playerHealthImgSpec;
 
@@ -27,15 +28,15 @@ public class PlayerLife : MonoBehaviour {
 
         if (health <= 0)
         {
+            GameObject blood = Instantiate(bloodsplat, transform.position, Quaternion.identity);
+            Destroy(blood, 2f);
+
             Respawn(Vector3.zero);
 
             if (GetComponent<PlayerMovement>().id == 0)
                 GameSession.Instance.AddKill(1);
             else
                 GameSession.Instance.AddKill(0);
-
-
-
         }
     }
 
@@ -48,11 +49,9 @@ public class PlayerLife : MonoBehaviour {
         else
             transform.position = pos;
 
-        transform.LookAt(new Vector3(29 / 2, 2, 29 / 2));
-
         playerHealthImg.rectTransform.localScale = new Vector3(1, 1, 1);
         playerHealthImgSpec.rectTransform.localScale = new Vector3(1, 1, 1);
         transform.position = MazeGenerator.Instance.GetRandomCorner();
-        transform.LookAt(new Vector3(29 / 2, 0, 29 / 2));
+        transform.LookAt(new Vector3(29f / 2f, 2f, 29f / 2f));
     }
 }
