@@ -93,7 +93,7 @@ public class MazeGenerator: MonoBehaviour
 	}
 
 	// remove blocks with no neighbors to make rooms
-        for (int y = 2; i <= MazeTileHeight - 2; y += 2)
+        for (int y = 2; y <= MazeTileHeight - 2; y += 2)
         {
             for (int x = 2; x <= MazeTileWidth - 2; x += 2)
             {
