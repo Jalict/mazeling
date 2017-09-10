@@ -9,15 +9,21 @@ public class BettingRetrieve : MonoBehaviour {
     public bool _running;
     public bool _visible;
 
-    public Text playerOne;
-    public Text playerTwo;
+    public Text playerOneText;
+    public Text playerTwoText;
+
+    private List<int> playerOneScoreHistory;
+    private List<int> playerTwoScoreHistory;
 
 	// Use this for initialization
 	void Start () {
         StartCoroutine(Retrieve());
 
-        playerOne.gameObject.SetActive(false);
-        playerTwo.gameObject.SetActive(false);
+        playerOneText.gameObject.SetActive(false);
+        playerTwoText.gameObject.SetActive(false);
+
+        playerOneScoreHistory = new List<int>();
+        playerTwoScoreHistory = new List<int>();
     }
 	
 	// Update is called once per frame
@@ -25,8 +31,8 @@ public class BettingRetrieve : MonoBehaviour {
     {
 		if(Input.GetKeyDown(KeyCode.B))
         {
-            playerOne.gameObject.SetActive(!playerOne.gameObject.activeSelf);
-            playerTwo.gameObject.SetActive(!playerTwo.gameObject.activeSelf);
+            playerOneText.gameObject.SetActive(!playerOneText.gameObject.activeSelf);
+            playerTwoText.gameObject.SetActive(!playerTwoText.gameObject.activeSelf);
         }
 	}
 
@@ -41,8 +47,11 @@ public class BettingRetrieve : MonoBehaviour {
                 Debug.Log(www.error);
             else
             {
-                playerOne.text = "Bets: " + BettingData.CreateFromJSON(www.downloadHandler.text).Player1;
-                playerTwo.text = "Bets: " + BettingData.CreateFromJSON(www.downloadHandler.text).Player2;
+                playerOneText.text = "Bets: " + BettingData.CreateFromJSON(www.downloadHandler.text).Player2;
+                playerTwoText.text = "Bets: " + BettingData.CreateFromJSON(www.downloadHandler.text).Player1;
+
+                playerOneScoreHistory.Add(BettingData.CreateFromJSON(www.downloadHandler.text).Player2);
+                playerTwoScoreHistory.Add(BettingData.CreateFromJSON(www.downloadHandler.text).Player1);
             }
 
             yield return new WaitForSeconds(1);

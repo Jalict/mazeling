@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+
+<header>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        
+        var spectator = createUniqueUserId();
+
+        function createUniqueUserId() {
+
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for (var i = 0; i < 5; i++)
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+            return text;
+        }
+
+        function voteBluePlayer() {
+
+            var vote = "player1";
+
+            $.ajax({
+
+                headers: {
+
+                    'Accept': 'application/json',
+                    
+                    'Content-Type': 'application/json'
+                },
+
+                type: "POST",
+                
+                url: 'https://ultcfsn8w2.execute-api.eu-west-1.amazonaws.com/prod/GetSpectatorVote?username=' + spectator + '&vote=' + vote,
+                
+                async: true,
+            })
+
+        }
+
+        function voteRedPlayer() {
+
+            var vote = "player2";
+
+            $.ajax({
+
+                headers: {
+                    
+                    'Accept': 'application/json',
+                    
+                    'Content-Type': 'application/json'
+                },
+
+                type: "POST",
+                
+                url: 'https://ultcfsn8w2.execute-api.eu-west-1.amazonaws.com/prod/GetSpectatorVote?username=' + spectator + '&vote=' + vote,
+                
+                async: true,
+            })
+        }
+
+    </script>  
+    
+    <style>
+        
+        html, body {
+            
+            height: 100%;
+        }
+        
+        section {
+            
+            height: 50%;
+            width: 100%;
+        }
+        
+        section div {
+            
+            height: 100%;
+        }
+        
+        .custom {
+            
+            width: 100% !important;
+            height: 100% !important;
+            font-size: 35px;
+            line-height: 11;
+        }
+
+    </style>
+
+</header>
+
+<body>
+    
+    <section>
+        <div> <a height: 320px class="btn btn-block btn-lg btn-danger custom" onclick="voteRedPlayer()"> Red Player</a></div> 
+    </section>
+    
+    <section>
+        <div> <a  class="btn btn-block btn-lg btn-primary custom" onclick="voteBluePlayer()">Blue Player</a> </div>
+    </section>
+
+</body>
+
+</html>
