@@ -63,56 +63,56 @@ public class MazeGenerator: MonoBehaviour
 	    int MazeTileWidth = Maze.GetUpperBound(1);
 
 	// remove blocks to make maze
-        for (int i = 1; i < MazeTileHeight; i++)
+        for (int y = 1; y < MazeTileHeight; y++)
         {
-            for (int j = 1; j < MazeTileWidth; j++)
+            for (int x = 1; x < MazeTileWidth; x++)
             {
-                if (ShouldRemoveWall(i, j, MazeTileWidth, MazeTileHeight))
+                if (ShouldRemoveWall(y, x, MazeTileHeight, MazeTileWidth))
                 {
-		            Maze[i, j] = 0;
-		        }
+                    Maze[y, x] = 0;
 	        }
+	    }
         }
 
-	// remove blocks around center
-	for (int i = MazeTileHeight / 2 - 2; i <= MazeTileHeight / 2 + 2; i++)
-	{
-		for (int j = MazeTileWidth/ 2 - 2; j <= MazeTileWidth/ 2 + 2; j++)
-		{
-			Maze[i, j] = 0;
-		}
-	}
-
-	// remove blocks with no neighbors to make rooms
-        for (int i = 2; i <= MazeTileHeight - 2; i += 2)
+        // remove blocks around center
+        for (int y = MazeTileHeight / 2 - 2; y <= MazeTileHeight / 2 + 2; y++)
         {
-            for (int j = 2; j <= MazeTileWidth - 2; j += 2)
+            for (int x = MazeTileWidth / 2 - 2; x <= MazeTileWidth/ 2 + 2; x++)
+            {
+                Maze[y, x] = 0;
+            }
+        }
+
+        // remove blocks with no neighbors to make rooms
+        for (int y = 2; y <= MazeTileHeight - 2; y += 2)
+        {
+            for (int x = 2; x <= MazeTileWidth - 2; x += 2)
             {
 		bool NeighborsEmpty =
-			Maze[i - 1, j] == 0 && // top
-			Maze[i, j - 1] == 0 && // left
-			Maze[i + 1, j] == 0 && // bottom
-			Maze[i, j + 1] == 0;   // right
+			Maze[y - 1, x] == 0 && // top
+			Maze[y, x - 1] == 0 && // left
+			Maze[y + 1, x] == 0 && // bottom
+			Maze[y, x + 1] == 0;   // right
 
                 if (NeighborsEmpty)
                 {
-		    Maze[i, j] = 0;
+		    Maze[y, x] = 0;
 		}
 	    }
         }
 
         print(MazeString);  // added to create String
 
-        for (int i = 0; i <= MazeTileHeight; i++)
+        for (int y = 0; y <= MazeTileHeight; y++)
         {
-            for (int j = 0; j <= MazeTileWidth; j++)
+            for (int x = 0; x <= MazeTileWidth; x++)
             {
-                if (Maze[i, j] == 1)
+                if (Maze[y, x] == 1)
 		{
                     MazeString = MazeString + "X";  // added to create String
                     ptype = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    ptype.name = "[" + j + ":" + i + "]";
-                    ptype.transform.position = new Vector3(i * ptype.transform.localScale.x, 0, j * ptype.transform.localScale.z);
+                    ptype.name = "[" + y + ":" + x + "]";
+                    ptype.transform.position = new Vector3(x * ptype.transform.localScale.x, 0, y * ptype.transform.localScale.z);
 
                     if (brick != null) { ptype.GetComponent<Renderer>().material = brick; }
                     ptype.transform.parent = transform;
@@ -121,7 +121,7 @@ public class MazeGenerator: MonoBehaviour
 		else
                 {
                     MazeString = MazeString + "0"; // added to create String
-                    pathMazes.Add(new Vector3(i, 0, j));
+                    pathMazes.Add(new Vector3(x, 0, y));
                 }
 	    }
             MazeString = MazeString + "\n";  // added to create String
@@ -220,9 +220,9 @@ public class MazeGenerator: MonoBehaviour
         return p.x >= 0 && p.y >= 0 && p.x < width && p.y < height;
     }
 
-    private bool ShouldRemoveWall(int i, int j, int width, int height)
+    private bool ShouldRemoveWall(int y, int x, int height, int width)
     {
-        return i % 2 != j % 2 && rnd.Next(100) < 20;
+        return x % 2 != y % 2 && rnd.Next(100) < 20;
     }
 
     public Vector3 GetRandomCorner()
