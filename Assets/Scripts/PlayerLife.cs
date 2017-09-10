@@ -44,7 +44,7 @@ public class PlayerLife : MonoBehaviour {
         health = 1;
 
         if (pos == Vector3.zero)
-            transform.position = MazeGeneratorOther.Instance.GetRandomCorner();
+            transform.position = MazeGenerator.Instance.GetRandomCorner();
         else
             transform.position = pos;
 
