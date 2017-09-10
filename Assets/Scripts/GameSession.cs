@@ -15,6 +15,7 @@ public class GameSession : MonoBehaviour {
     public PlayerMovement playerOneMovement;
     public PlayerLife playerTwoLife;
     public PlayerMovement playerTwoMovement;
+    public AudioClip beep;
 
     private float timeStarted;
     private int timeLeft;
@@ -62,9 +63,9 @@ public class GameSession : MonoBehaviour {
         timeStarted = Time.time;
 
         playerOneLife.Respawn(new Vector3(1,2,1));
-	playerOneMovement.Respawn();
+	    playerOneMovement.Respawn();
         playerTwoLife.Respawn(new Vector3(29, 2, 29));
-	playerTwoMovement.Respawn();
+	    playerTwoMovement.Respawn();
     }
 
     public void AddKill(int i)
@@ -73,5 +74,7 @@ public class GameSession : MonoBehaviour {
             playerOneScore++;
         else if (i == 1)
             playerTwoScore++;
+
+        AudioSource.PlayClipAtPoint(beep, Vector3.zero);
     }
 }

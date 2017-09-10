@@ -9,6 +9,7 @@ public class MazeGenerator: MonoBehaviour
 {
     public int width, height;
     public Material[] brick;
+    public AudioClip[] breaking;
     private int[,] Maze;
     private List<Vector3> pathMazes = new List<Vector3>();
     private Stack<Vector2> _tiletoTry = new Stack<Vector2>();
@@ -126,6 +127,7 @@ public class MazeGenerator: MonoBehaviour
                     {
                         Wall w = ptype.AddComponent<Wall>();
                         w.wallMaterials = brick;
+                        w.breakingClip = breaking;
                         ptype.tag = "Wall";
                     }
                         

@@ -15,6 +15,8 @@ public class PlayerLife : MonoBehaviour {
     public Image playerHealthImg;
     public Image playerHealthImgSpec;
 
+    public AudioClip[] hurt;
+
     void Start()
     {
         health = 1;
@@ -25,6 +27,7 @@ public class PlayerLife : MonoBehaviour {
         health -= hitDamage;
 
         shake.Shake(0.25f, 0.25f);
+        AudioSource.PlayClipAtPoint(hurt[UnityEngine.Random.Range(0, hurt.Length)], transform.position);
 
         playerHealthImg.rectTransform.localScale = new Vector3(health, 1, 1);
         playerHealthImgSpec.rectTransform.localScale = new Vector3(health, 1, 1);

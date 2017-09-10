@@ -8,6 +8,11 @@ public class Projectile : MonoBehaviour
     public GameObject explosionPrefab;    // Prefab used to show projectile hitting wall
     public AudioClip[] explosionClip;
 
+    void OnEnable()
+    {
+
+    }
+
     void OnCollisionEnter(Collision other)
     {
         // Create explosion particles

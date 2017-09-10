@@ -8,6 +8,7 @@ public class Wall : MonoBehaviour
     public Material[] wallMaterials;
 
     private Renderer rend;
+    public AudioClip[] breakingClip;
 
     void Start()
     {
@@ -24,6 +25,8 @@ public class Wall : MonoBehaviour
     public void Hit()
     {
         health -= 0.25f;
+
+        AudioSource.PlayClipAtPoint(breakingClip[UnityEngine.Random.Range(0, breakingClip.Length)], transform.position, 0.1f);
 
         if (health <= 0)
             gameObject.SetActive(false);    //No need to destroy, just disable it
