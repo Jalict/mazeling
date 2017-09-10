@@ -26,7 +26,7 @@ public class PlayerLife : MonoBehaviour {
     {
         health = 1;
 
-        transform.position = MazeGeneratorOther.Instance.GetRandomCorner();
+        transform.position = MazeGenerator.Instance.GetRandomCorner();
         transform.LookAt(new Vector3(29 / 2, 0, 29 / 2));
     }
 }
