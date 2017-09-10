@@ -53,6 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4569492713899712}
+  - component: {fileID: 114334197718254120}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -115,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273890851134754}
   m_LocalRotation: {x: 0, y: -0.0000005513429, z: 0, w: 1}
-  m_LocalPosition: {x: -0.35557055, y: 3.8, z: -1.1897736}
+  m_LocalPosition: {x: 1, y: 2, z: 1}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4569492713899712}
@@ -288,6 +289,17 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1995222678166182, guid: cb20fc9da4fc1e64181cbddbe9712145,
     type: 2}
   shotClip: {fileID: 8300000, guid: 5c21dfa612913524187cf053af647d7c, type: 3}
+--- !u!114 &114334197718254120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1187815649498580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d5ac6d8ddd1e649b7fc98f1a77c909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114537392448344782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,8 +314,12 @@ MonoBehaviour:
   health: 1
   hitDamage: 0.25
   bloodsplat: {fileID: 1413823542975938, guid: bf4f59b579d24664f8de86452e464766, type: 2}
+  shake: {fileID: 114334197718254120}
   playerHealthImg: {fileID: 0}
   playerHealthImgSpec: {fileID: 0}
+  hurt:
+  - {fileID: 8300000, guid: d190ee0e07d261c41a424e7f201f1c47, type: 3}
+  - {fileID: 8300000, guid: 8f3109367d5e16f4394241babf96721f, type: 3}
 --- !u!114 &114622369988110540
 MonoBehaviour:
   m_ObjectHideFlags: 1

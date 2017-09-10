@@ -75,6 +75,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4227948502920438}
+  - component: {fileID: 114511896220333252}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -116,8 +117,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183774765309282}
-  m_LocalRotation: {x: -0, y: -0.999397, z: -0, w: 0.034725003}
-  m_LocalPosition: {x: -0.28, y: 3.8, z: 0.9}
+  m_LocalRotation: {x: -0, y: -0.8660256, z: -0, w: 0.49999967}
+  m_LocalPosition: {x: 29, y: 2, z: 29}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4227948502920438}
@@ -303,6 +304,17 @@ MonoBehaviour:
   movementSpeed: 3000
   rotationSpeed: 200
   playerColor: {r: 1, g: 0, b: 0, a: 0}
+--- !u!114 &114511896220333252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739488091376342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d5ac6d8ddd1e649b7fc98f1a77c909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114660942973246404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,8 +329,12 @@ MonoBehaviour:
   health: 1
   hitDamage: 0.25
   bloodsplat: {fileID: 1413823542975938, guid: bf4f59b579d24664f8de86452e464766, type: 2}
+  shake: {fileID: 114511896220333252}
   playerHealthImg: {fileID: 0}
   playerHealthImgSpec: {fileID: 0}
+  hurt:
+  - {fileID: 8300000, guid: d190ee0e07d261c41a424e7f201f1c47, type: 3}
+  - {fileID: 8300000, guid: 8f3109367d5e16f4394241babf96721f, type: 3}
 --- !u!124 &124888218847817780
 Behaviour:
   m_ObjectHideFlags: 1
