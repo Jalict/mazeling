@@ -45,6 +45,7 @@ public class MazeGenerator: MonoBehaviour
     void MakeBlocks()
     {
 
+	// completely fill map with blocks 
         Maze = new int[width, height];
         for (int x = 0; x < width; x++)
         {
@@ -61,6 +62,7 @@ public class MazeGenerator: MonoBehaviour
 	    int MazeTileHeight = Maze.GetUpperBound(0);
 	    int MazeTileWidth = Maze.GetUpperBound(1);
 
+	// remove blocks to make maze
         for (int i = 1; i < MazeTileHeight; i++)
         {
             for (int j = 1; j < MazeTileWidth; j++)
@@ -72,6 +74,16 @@ public class MazeGenerator: MonoBehaviour
 	        }
         }
 
+	// remove blocks around center
+	for (int i = MazeTileHeight / 2 - 2; i <= MazeTileHeight / 2 + 2; i++)
+	{
+		for (int j = MazeTileWidth/ 2 - 2; j <= MazeTileWidth/ 2 + 2; j++)
+		{
+			Maze[i, j] = 0;
+		}
+	}
+
+	// remove blocks with no neighbors to make rooms
         for (int i = 2; i <= MazeTileHeight - 2; i += 2)
         {
             for (int j = 2; j <= MazeTileWidth - 2; j += 2)
