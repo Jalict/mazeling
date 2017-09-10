@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameSession : MonoBehaviour {
@@ -45,7 +46,7 @@ public class GameSession : MonoBehaviour {
         timeText.text = "Time Left\n"+timeLeft;
 
         if(timeLeft <= 0)
-            RestartRound();
+            StartCoroutine(RestartRound());
 
         playerOneScoreText.text = "Score\n" + playerOneScore;
         playerTwoScoreText.text = "Score\n" + playerTwoScore;
@@ -54,12 +55,15 @@ public class GameSession : MonoBehaviour {
             Application.Quit();
 
         if (Input.GetKeyDown(KeyCode.Delete))
-            RestartRound();
+            StartCoroutine(RestartRound());
 	}
 
-    void RestartRound()
+    IEnumerator RestartRound()
     {
-        Application.LoadLevel(0);
+        SceneManager.LoadScene(0,LoadSceneMode.Single);
+
+        yield return new WaitForSeconds(2);
+
         timeStarted = Time.time;
 
         playerOneLife.Respawn(new Vector3(1,2,1));
@@ -70,9 +74,9 @@ public class GameSession : MonoBehaviour {
 
     public void AddKill(int i)
     {
-        if (i == 0)
+        if (i == 1)
             playerOneScore++;
-        else if (i == 1)
+        else if (i == 2)
             playerTwoScore++;
 
         AudioSource.PlayClipAtPoint(beep, Vector3.zero);

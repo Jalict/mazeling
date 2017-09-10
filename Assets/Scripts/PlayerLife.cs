@@ -39,10 +39,10 @@ public class PlayerLife : MonoBehaviour {
 
             Respawn(Vector3.zero);
 
-            if (GetComponent<PlayerMovement>().id == 0)
+            if (GetComponent<PlayerMovement>().id == 2)
+                GameSession.Instance.AddKill(2);
+            else if(GetComponent<PlayerMovement>().id == 1)
                 GameSession.Instance.AddKill(1);
-            else
-                GameSession.Instance.AddKill(0);
         }
     }
 
