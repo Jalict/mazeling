@@ -10,27 +10,53 @@ public class PlayerMovement : MonoBehaviour
     public Color playerColor;
 
     private Rigidbody body;
+    static private bool powerupActive;
 
-	void Start ()
-        {
-            body = GetComponent<Rigidbody>();
+    void Start ()
+    {
+	powerupActive = false;
+        body = GetComponent<Rigidbody>();
 
-            GetComponent<MeshRenderer>().material.color = playerColor;
-	}
+        GetComponent<MeshRenderer>().material.color = playerColor;
+    }
 	
-	void Update ()
+    void Update ()
+    {
+        float vertical = Input.GetAxis("Vertical_" + id);
+        float horizontal = Input.GetAxis("Horizontal_" + id);
+
+        if (horizontal != 0)
         {
-            float vertical = Input.GetAxis("Vertical_" + id);
-            float horizontal = Input.GetAxis("Horizontal_" + id);
+            transform.Rotate(transform.up, horizontal * Time.deltaTime * rotationSpeed);
+        }
 
-            if (horizontal != 0)
-            {
-                transform.Rotate(transform.up, horizontal * Time.deltaTime * rotationSpeed);
-            }
+        if (vertical != 0)
+        {
+            body.AddForce(transform.forward * Time.deltaTime * vertical * movementSpeed);
+        }
+    }
 
-            if (vertical != 0)
-            {
-                body.AddForce(transform.forward * Time.deltaTime * vertical * movementSpeed);
-            }
+    void OnTriggerEnter(Collider other)
+    {
+	if (!powerupActive && other.name == "Hovering Object") {
+		powerupActive = true;
+		movementSpeed *= 2;
+		StartCoroutine(PowerupTimeout());
 	}
+    }
+
+    public void Respawn()
+    {
+	if (powerupActive) {
+		powerupActive = false;
+		movementSpeed /= 2;
+	}
+    }
+
+    IEnumerator PowerupTimeout()
+    {
+	    yield return new WaitForSeconds(8f);
+	    powerupActive = false;
+	    movementSpeed /= 2;
+    }
 }

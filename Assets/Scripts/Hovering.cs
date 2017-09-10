@@ -3,40 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hovering : MonoBehaviour {
-    public float movingSpeed;
-    public float movingAmount;
     public Direction movingDirection;
     public Space movingSpace;
+    private bool enabled;
 
-    [Range(0,1)]
-    private float t;
     private Transform objectMoved;
-    private bool tick;
-
-	// Use this for initialization
-	void Start ()
+    
+    // Use this for initialization
+    void Start ()
     {
         objectMoved = transform.GetChild(0).transform;
-
-        t = 0;
-        tick = false;
-	}
+	enabled = true;
+    }
 	
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update ()
     {
-	    Vector3 directionVector = GetDirectionVector(movingSpace) * movingAmount;
-
-        objectMoved.position = Vector3.Lerp(transform.position - directionVector, transform.position + directionVector, t);
-
-        if(tick) {
-            t += Time.deltaTime * movingSpeed;
-        } else {
-            t -= Time.deltaTime * movingSpeed;
-        }
-
-        if ((t >= 1 && tick) || (t <= 0 && !tick))
-            tick = !tick;
+        Vector3 position = objectMoved.position;
+        position.y = enabled
+                ? Mathf.Sin(Time.time) * 0.2f
+                : -100; // hack, should really disable renderer...
+        objectMoved.position = position;
     }
 
     Vector3 GetDirectionVector(Space space)
@@ -66,6 +53,19 @@ public class Hovering : MonoBehaviour {
         }
 
         return vec;
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (enabled && (other.gameObject.name == "Player Blue" || other.gameObject.name == "Player Red")) {
+	    enabled = false;
+	    StartCoroutine(respawnPowerup());
+        }
+    }
+
+    IEnumerator respawnPowerup()
+    {
+	    yield return new WaitForSeconds(8f);
+	    enabled = true;
     }
 }
 

@@ -44,7 +44,7 @@ public class PlayerLife : MonoBehaviour {
         health = 1;
 
         if (pos == Vector3.zero)
-            transform.position = MazeGeneratorOther.Instance.GetRandomCorner();
+            transform.position = MazeGenerator.Instance.GetRandomCorner();
         else
             transform.position = pos;
 
@@ -52,5 +52,7 @@ public class PlayerLife : MonoBehaviour {
 
         playerHealthImg.rectTransform.localScale = new Vector3(1, 1, 1);
         playerHealthImgSpec.rectTransform.localScale = new Vector3(1, 1, 1);
+        transform.position = MazeGenerator.Instance.GetRandomCorner();
+        transform.LookAt(new Vector3(29 / 2, 0, 29 / 2));
     }
 }

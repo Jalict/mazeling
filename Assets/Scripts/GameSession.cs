@@ -12,7 +12,9 @@ public class GameSession : MonoBehaviour {
     public Text playerOneScoreText;
     public Text playerTwoScoreText;
     public PlayerLife playerOneLife;
+    public PlayerMovement playerOneMovement;
     public PlayerLife playerTwoLife;
+    public PlayerMovement playerTwoMovement;
 
     private float timeStarted;
     private int timeLeft;
@@ -57,6 +59,12 @@ public class GameSession : MonoBehaviour {
     void RestartRound()
     {
         Application.LoadLevel(0);
+        timeStarted = Time.time;
+
+        playerOneLife.Respawn(new Vector3(1,2,1));
+	playerOneMovement.Respawn();
+        playerTwoLife.Respawn(new Vector3(29, 2, 29));
+	playerTwoMovement.Respawn();
     }
 
     public void AddKill(int i)
