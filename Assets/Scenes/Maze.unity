@@ -173,6 +173,11 @@ Prefab:
       propertyPath: field of view
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 20373065186950116, guid: a47c5a82bfeadfb4992ce358dfdee92a,
+        type: 2}
+      propertyPath: field of view
+      value: 51.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a47c5a82bfeadfb4992ce358dfdee92a, type: 2}
   m_IsPrefabParent: 0
@@ -265,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _running: 1
+  _visible: 0
   playerOne: {fileID: 1140318796}
   playerTwo: {fileID: 1091308374}
 --- !u!4 &900570178
@@ -700,6 +706,11 @@ Prefab:
         type: 2}
       propertyPath: field of view
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 20543612015866010, guid: 208aa33fd5f5f4d4aba5358198b163da,
+        type: 2}
+      propertyPath: field of view
+      value: 51.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 208aa33fd5f5f4d4aba5358198b163da, type: 2}
