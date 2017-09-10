@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Color playerColor;
 
     private Rigidbody body;
-    private bool powerupActive;
+    static private bool powerupActive;
 
     void Start ()
     {
