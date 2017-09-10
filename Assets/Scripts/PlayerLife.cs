@@ -52,5 +52,7 @@ public class PlayerLife : MonoBehaviour {
 
         playerHealthImg.rectTransform.localScale = new Vector3(1, 1, 1);
         playerHealthImgSpec.rectTransform.localScale = new Vector3(1, 1, 1);
+        transform.position = MazeGenerator.Instance.GetRandomCorner();
+        transform.LookAt(new Vector3(29 / 2, 0, 29 / 2));
     }
 }

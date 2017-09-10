@@ -5,7 +5,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-public class MazeGeneratorOther : MonoBehaviour
+public class MazeGenerator: MonoBehaviour
 {
     public int width, height;
     public Material brick;
@@ -30,8 +30,8 @@ public class MazeGeneratorOther : MonoBehaviour
             _currentTile = value;
         }
     }
-    private static MazeGeneratorOther instance;
-    public static MazeGeneratorOther Instance
+    private static MazeGenerator instance;
+    public static MazeGenerator Instance
     {
         get { return instance; }
     }
