@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed;
     public float rotationSpeed;
     public Color playerColor;
+    public AudioClip powerup;
 
     private Rigidbody body;
     static private bool powerupActive;
@@ -42,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
 		powerupActive = true;
 		movementSpeed *= 2;
 		StartCoroutine(PowerupTimeout());
+            AudioSource.PlayClipAtPoint(powerup, transform.position,0.8f);
 	}
     }
 
